@@ -86,6 +86,9 @@ mpt_treebugs <- function (
   } else {
     prior_args <- NULL
   }
+  if(method == "beta") {
+    prior_args <- c(prior_args, alpha = "dgamma(1,.1)T(1, )", beta = "dgamma(1,.1)T(1, )")
+   }
   
   gof_group <- list()
   treebugs_fit <- list()
